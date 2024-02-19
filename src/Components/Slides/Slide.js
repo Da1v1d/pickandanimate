@@ -1,12 +1,10 @@
-import { memo, useRef } from "react";
+import { useRef } from "react";
 import { setWidth } from "../../utils/slide";
 import "./style.css";
 
-const properties = ["X", "Y"];
-
 export const Slide = ({ property, ...props }) => {
   const ref = useRef();
-  if (!properties.includes(property)) {
+  if (property !== 'X' || property !== 'Y') {
     setWidth(ref.current);
   }
   return (

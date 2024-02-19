@@ -7,7 +7,6 @@ import { Switch } from "../Switch";
 
 export const SettingsPanel = memo(({ onChange, animateParams, clicked }) => {
   const disabled = !clicked;
-  console.log(animateParams);
   return (
     <aside className="settings_panel">
       <SlideXY
@@ -73,6 +72,7 @@ export const SettingsPanel = memo(({ onChange, animateParams, clicked }) => {
         min="0"
         value={animateParams.Delay}
         max="20"
+        step="0.1"
         onChange={onChange}
         name="Delay"
         transform={(value) => `${value}s`}

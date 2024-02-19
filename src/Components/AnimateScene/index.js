@@ -1,23 +1,29 @@
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect, useRef } from "react";
 import { Button } from "../Button";
 import "./style.css";
 
-export const AnimateScene = ({ clicked, setClicked }) => {
+export const AnimateScene = forwardRef(({ clicked, setClicked }, ref) => {
   // TODO change clicked funcionality to work only in one element
 
   const animateSceneRef = useRef(null);
 
   const clickTarget = (e) => {
     if (e.target !== animateSceneRef.current) {
+      // this ref is the current element which is clicket
+      ref.current = e.target;
       setClicked((prev) => !prev);
-    } else setClicked(false);
+    } else {
+      ref.current = null;
+      setClicked(false);
+    }
   };
 
   useEffect(() => {
-    animateSceneRef?.current.addEventListener("click", clickTarget);
+    const elem = animateSceneRef?.current;
+    elem.addEventListener("click", clickTarget);
 
-    return () =>
-      animateSceneRef?.current.removeEventListener("click", clickTarget);
+    return () => elem.removeEventListener("click", clickTarget);
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -25,4 +31,4 @@ export const AnimateScene = ({ clicked, setClicked }) => {
       <Button clicked={clicked} />
     </div>
   );
-};
+});

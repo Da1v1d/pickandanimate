@@ -4,11 +4,11 @@ export const useAnimateParams = () => {
   const [animateParams, setAnimateParams] = useState({
     X: 0,
     Y: 0,
-    Opacity: 0,
+    Opacity: 100,
     Scale: 1,
     Blur: 0,
-    Speed: 0,
-    Delay: 0,
+    Speed: 0.1,
+    Delay: 0.1,
     Easing: "ease",
     Replay: false,
   });
