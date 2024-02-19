@@ -1,0 +1,35 @@
+.clicked-element {
+  border: 1px solid rgba(62, 135, 248, 1);
+  position: relative;
+  z-index: 1;
+  /* transition: all 1s; */
+}
+
+.rec {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 3px;
+  border: 2px solid rgba(62, 135, 248, 1);
+}
+
+.rec-1 {
+  left: -6px;
+  top: -6px;
+}
+
+.rec-2 {
+  right: -6px;
+  top: -6px;
+}
+
+.rec-3 {
+  left: -6px;
+  bottom: -6px;
+}
+
+.rec-4 {
+  right: -6px;
+  bottom: -6px;
+}

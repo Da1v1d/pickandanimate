@@ -1,0 +1,11 @@
+.animate_scene {
+  width: calc(100% - 393px);
+  min-width: 400px;
+  background-color: white;
+  margin: 50px;
+  height: 700px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

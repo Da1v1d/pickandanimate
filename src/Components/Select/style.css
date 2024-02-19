@@ -1,0 +1,39 @@
+select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  appearance: none;
+  position: relative;
+  -webkit-appearance: none;
+  font-size: 13px;
+  z-index: 1;
+  width: 100%;
+}
+.parent-select {
+  position: relative;
+  width: 85px;
+}
+
+.parent-select::before {
+  content: "";
+  top: 3px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url("../../assets/icons/arrow.png") no-repeat;
+  background-position: right;
+  background-size: 13px;
+}
+
+select:focus {
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/* .parent-select:active .parent-select::before {
+  transform: rotate(-180deg);
+} */

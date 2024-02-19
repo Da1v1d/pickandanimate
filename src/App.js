@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { AnimateScene } from "./Components/AnimateScene";
+import { SettingsPanel } from "./Components/SettingsPanel";
+import { useAnimateParams } from "./hooks/useAnimateParams";
 
 function App() {
+  const [clicked, setClicked] = useState(false);
+
+  //? How to optimize state  to reduce components re-render inside this component
+
+  const { animateParams, setAnimateParams, onChange } = useAnimateParams();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AnimateScene clicked={clicked} setClicked={setClicked} />
+      <SettingsPanel
+        animateParams={animateParams}
+        onChange={onChange}
+        clicked={clicked}
+      />
     </div>
   );
 }

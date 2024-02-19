@@ -1,0 +1,65 @@
+input[type="range"] {
+  appearance: none;
+  outline: none;
+  background-color: rgb(222, 222, 222);
+  accent-color: var(--input-color);
+  width: 150px;
+  position: relative;
+  height: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 11;
+  border: 2.5px solid #afafaf;
+  position: relative;
+}
+
+.parent-input {
+  --input-height: 2px;
+  --input-color: #afafaf;
+  display: flex;
+  margin-top: 19px;
+  gap: 10px;
+  align-items: center;
+  user-select: none;
+}
+
+p {
+}
+
+.text-right {
+  text-align: right;
+  width: 70px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.text-left {
+  text-align: left;
+  opacity: 0.7;
+  width: 10px;
+}
+
+input[type="range"]::before {
+  content: "";
+  width: var(--before-width, 0);
+  height: 2px;
+  border-radius: 10px;
+  pointer-events: none;
+  position: absolute;
+  background-color: var(--input-color);
+  left: var(--before-left);
+}
+
+input[type="range"]:disabled,
+input[type="range"]:disabled::-webkit-slider-thumb {
+  opacity: 0.7;
+  cursor: default !important;
+}
